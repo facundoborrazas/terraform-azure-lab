@@ -1,4 +1,3 @@
-
 terraform {
   required_providers {
     azurerm = {
@@ -23,12 +22,4 @@ resource "azurerm_virtual_network" "lab" {
   location            = var.location
   resource_group_name = data.azurerm_resource_group.lab.name
   address_space       = var.vnet_address_space
-}
-
-# Creamos una subnet dentro de la VNet.
-resource "azurerm_subnet" "web" {
-  name                 = var.subnet_name
-  resource_group_name  = data.azurerm_resource_group.lab.name
-  virtual_network_name = azurerm_virtual_network.lab.name
-  address_prefixes     = var.subnet_address_prefixes
 }

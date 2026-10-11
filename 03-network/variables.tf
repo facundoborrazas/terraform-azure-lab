@@ -17,14 +17,26 @@ variable "vnet_address_space" {
   default     = ["10.10.0.0/16"]
 }
 
-variable "subnet_name" {
+variable "subnet_name_web" {
   description = "Nombre de la subnet para recursos web"
   type        = string
   default     = "snet-web"
 }
 
-variable "subnet_address_prefixes" {
-  description = "Rangos de direcciones IP de la subnet"
+variable "subnet_web_address_prefixes" {
+  description = "Rangos de direcciones IP de la subnet web"
   type        = list(string)
   default     = ["10.10.1.0/24"]
+}
+
+variable "subnet_name_db" {
+  description = "Nombre de la subnet para recursos db"
+  type        = string
+  default     = "snet-db"
+}
+
+variable "subnet_db_address_prefixes" {
+  description = "Rangos de direcciones IP de la subnet db"
+  type        = list(string)
+  default     = ["10.10.2.0/24"]
 }

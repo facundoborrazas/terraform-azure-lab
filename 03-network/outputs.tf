@@ -23,3 +23,8 @@ output "network_security_group_name" {
   description = "Nombre del Network Security Group de la red web"
   value       = azurerm_network_security_group.web.name
 }
+
+output "db_network_security_group_name" {
+  description = "Nombre del Network Security Group de la subnet de base de datos"
+  value       = azurerm_network_security_group.db.name
+}
